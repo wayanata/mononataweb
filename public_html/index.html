@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <script>document.documentElement.classList.add('js')</script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#0b0d12" />
@@ -34,15 +35,17 @@
   <!-- Canonical -->
   <link rel="canonical" href="https://mononata.com/">
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="/assets/img/favicon.png">
+  <!-- Favicon / PWA -->
+  <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
+  <link rel="apple-touch-icon" href="/assets/img/favicon.svg">
+  <link rel="manifest" href="/site.webmanifest">
 
   <!-- Preconnect for faster YouTube iframe loading -->
   <link rel="preconnect" href="https://www.youtube.com">
   <link rel="preconnect" href="https://i.ytimg.com">
 
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="/assets/css/style.css?v=28" />
+  <link rel="stylesheet" href="/assets/css/style.css?v=29" />
 
   <!-- Structured Data: LocalBusiness -->
   <script type="application/ld+json">
@@ -71,6 +74,64 @@
     "areaServed": "Bali, Indonesia"
   }
   </script>
+
+  <!-- Structured Data: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Do you travel outside Bali for shoots?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes — we cover all of Bali and regularly travel to Lombok, Nusa Penida, the Gili Islands, Java, and beyond. Travel costs are billed at cost."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long until we receive the final photos and videos?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Photos: typically 7–14 days. Short-form reels: 3–7 days. Wedding films and brand films: 3–6 weeks depending on scope. Rush delivery is available on request."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you provide RAW files?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We deliver fully edited, color-graded files as standard. RAW or unedited files can be provided on request and are quoted separately."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is your booking process?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Send us a brief with the project type, location, date, duration, and references. We reply within 24 hours with a quote. To lock the date we ask for a 30% deposit, with the remainder due on delivery."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you offer drone footage?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Drone coverage is included in most video packages and can be added to any photo session, subject to local flight regulations."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What payment methods do you accept?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Bank transfer (IDR), Wise, and PayPal are all accepted. Invoices are provided for every project."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#home">Skip to content</a>
@@ -86,7 +147,10 @@
         <nav class="links" aria-label="Primary">
           <a href="#about">About</a>
           <a href="#services">Services</a>
+          <a href="#process">Process</a>
           <a href="#projects">Work</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#faq">FAQ</a>
           <a href="#contact">Contact</a>
         </nav>
 
@@ -99,7 +163,10 @@
       <nav class="mobile" id="mobile-menu" data-mobile aria-label="Mobile">
         <a href="#about">About</a>
         <a href="#services">Services</a>
+        <a href="#process">Process</a>
         <a href="#projects">Work</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
@@ -124,14 +191,14 @@
           </div>
 
           <ul class="hero-stats" aria-label="Highlights">
-            <li><strong>50+</strong><span>Brands worked with</span></li>
-            <li><strong>200+</strong><span>Projects delivered</span></li>
+            <li><strong data-count="50" data-suffix="+">50+</strong><span>Brands worked with</span></li>
+            <li><strong data-count="200" data-suffix="+">200+</strong><span>Projects delivered</span></li>
             <li><strong>Bali</strong><span>&amp; surrounding islands</span></li>
           </ul>
         </div>
 
         <!-- HERO SHOWREEL -->
-        <div class="card showreel-card">
+        <div class="card showreel-card" data-reveal>
           <div class="showreel-head">
             <div>
               <h3>Showreel</h3>
@@ -172,7 +239,7 @@
 
 
     <!-- ABOUT -->
-    <section id="about" class="section">
+    <section id="about" class="section" data-reveal>
       <div class="section-title">
         <div>
           <h2>About</h2>
@@ -197,13 +264,14 @@
           <li>Editing</li>
           <li>Color grading</li>
           <li>Short-form content</li>
+          <li>Drone</li>
         </ul>
       </div>
     </section>
 
 
     <!-- SERVICES -->
-    <section id="services" class="section">
+    <section id="services" class="section" data-reveal>
       <div class="section-title">
         <div>
           <h2>Services</h2>
@@ -243,8 +311,42 @@
     </section>
 
 
+    <!-- PROCESS -->
+    <section id="process" class="section" data-reveal>
+      <div class="section-title">
+        <div>
+          <h2>Process</h2>
+          <p>From first message to final delivery.</p>
+        </div>
+      </div>
+
+      <div class="process-grid">
+        <article class="process-step">
+          <span class="process-num">Step 01</span>
+          <h3>Brief</h3>
+          <p>Send us your project type, location, date, and references. We reply within 24 hours.</p>
+        </article>
+        <article class="process-step">
+          <span class="process-num">Step 02</span>
+          <h3>Quote &amp; Lock</h3>
+          <p>You receive a clear quote and timeline. A 30% deposit secures your date on our calendar.</p>
+        </article>
+        <article class="process-step">
+          <span class="process-num">Step 03</span>
+          <h3>Shoot Day</h3>
+          <p>Our team arrives on schedule with backup gear. We direct lightly, capture honestly.</p>
+        </article>
+        <article class="process-step">
+          <span class="process-num">Step 04</span>
+          <h3>Edit &amp; Deliver</h3>
+          <p>Edited photos and films delivered through a private gallery link. One round of revisions included.</p>
+        </article>
+      </div>
+    </section>
+
+
     <!-- TRUSTED BY -->
-    <section id="clients" class="section" aria-labelledby="clients-heading">
+    <section id="clients" class="section" aria-labelledby="clients-heading" data-reveal>
       <div class="section-title">
         <div>
           <h2 id="clients-heading">Trusted by</h2>
@@ -254,18 +356,18 @@
 
       <div class="card">
         <div class="logo-strip">
-          <div class="logo-card"><img src="/assets/img/brands/brand1.png" alt="Client brand 1" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
-          <div class="logo-card"><img src="/assets/img/brands/brand2.png" alt="Client brand 2" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
-          <div class="logo-card"><img src="/assets/img/brands/brand3.png" alt="Client brand 3" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
-          <div class="logo-card"><img src="/assets/img/brands/brand4.png" alt="Client brand 4" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
-          <div class="logo-card"><img src="/assets/img/brands/brand5.png" alt="Client brand 5" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
-          <div class="logo-card"><img src="/assets/img/brands/brand6.png" alt="Client brand 6" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
-          <div class="logo-card"><img src="/assets/img/brands/brand7.png" alt="Client brand 7" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
-          <div class="logo-card"><img src="/assets/img/brands/brand8.png" alt="Client brand 8" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
-          <div class="logo-card"><img src="/assets/img/brands/brand9.png" alt="Client brand 9" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
-          <div class="logo-card"><img src="/assets/img/brands/brand10.png" alt="Client brand 10" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
-          <div class="logo-card"><img src="/assets/img/brands/brand11.png" alt="Client brand 11" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
-          <div class="logo-card"><img src="/assets/img/brands/brand12.png" alt="Client brand 12" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+          <div class="logo-card"><img src="/assets/img/brands/brand1.png" alt="Client brand 1" width="140" height="40" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+          <div class="logo-card"><img src="/assets/img/brands/brand2.png" alt="Client brand 2" width="140" height="40" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+          <div class="logo-card"><img src="/assets/img/brands/brand3.png" alt="Client brand 3" width="140" height="40" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+          <div class="logo-card"><img src="/assets/img/brands/brand4.png" alt="Client brand 4" width="140" height="40" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+          <div class="logo-card"><img src="/assets/img/brands/brand5.png" alt="Client brand 5" width="140" height="40" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+          <div class="logo-card"><img src="/assets/img/brands/brand6.png" alt="Client brand 6" width="140" height="40" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+          <div class="logo-card"><img src="/assets/img/brands/brand7.png" alt="Client brand 7" width="140" height="40" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+          <div class="logo-card"><img src="/assets/img/brands/brand8.png" alt="Client brand 8" width="140" height="40" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+          <div class="logo-card"><img src="/assets/img/brands/brand9.png" alt="Client brand 9" width="140" height="40" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+          <div class="logo-card"><img src="/assets/img/brands/brand10.png" alt="Client brand 10" width="140" height="40" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+          <div class="logo-card"><img src="/assets/img/brands/brand11.png" alt="Client brand 11" width="140" height="40" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+          <div class="logo-card"><img src="/assets/img/brands/brand12.png" alt="Client brand 12" width="140" height="40" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
         </div>
         <p class="small" style="margin-top:12px;">&mdash; and many others.</p>
       </div>
@@ -273,7 +375,7 @@
 
 
     <!-- PROJECTS -->
-    <section id="projects" class="section">
+    <section id="projects" class="section" data-reveal>
       <div class="section-title">
         <div>
           <h2>Selected Work</h2>
@@ -296,56 +398,56 @@
 
         <div class="gallery" data-gallery>
           <div class="g-item portrait" data-cat="portrait">
-            <div class="g-img"><img src="/assets/img/p5.png" loading="lazy" alt="Portrait photography — Bali" onerror="this.style.display='none'"></div>
+            <div class="g-img"><img src="/assets/img/p5.png" width="600" height="800" loading="lazy" alt="Portrait photography — Bali" onerror="this.style.display='none'"></div>
           </div>
           <div class="g-item portrait" data-cat="portrait">
-            <div class="g-img"><img src="/assets/img/p6.png" loading="lazy" alt="Portrait photography — Bali" onerror="this.style.display='none'"></div>
+            <div class="g-img"><img src="/assets/img/p6.png" width="600" height="800" loading="lazy" alt="Portrait photography — Bali" onerror="this.style.display='none'"></div>
           </div>
           <div class="g-item portrait" data-cat="portrait">
-            <div class="g-img"><img src="/assets/img/p7.png" loading="lazy" alt="Portrait photography — Bali" onerror="this.style.display='none'"></div>
+            <div class="g-img"><img src="/assets/img/p7.png" width="600" height="800" loading="lazy" alt="Portrait photography — Bali" onerror="this.style.display='none'"></div>
           </div>
           <div class="g-item portrait" data-cat="portrait">
-            <div class="g-img"><img src="/assets/img/p8.png" loading="lazy" alt="Portrait photography — Bali" onerror="this.style.display='none'"></div>
+            <div class="g-img"><img src="/assets/img/p8.png" width="600" height="800" loading="lazy" alt="Portrait photography — Bali" onerror="this.style.display='none'"></div>
           </div>
           <div class="g-item portrait" data-cat="wedding">
-            <div class="g-img"><img src="/assets/img/p15.png" loading="lazy" alt="Wedding photography — Bali" onerror="this.style.display='none'"></div>
+            <div class="g-img"><img src="/assets/img/p15.png" width="600" height="800" loading="lazy" alt="Wedding photography — Bali" onerror="this.style.display='none'"></div>
           </div>
 
           <div class="g-item landscape" data-cat="product">
-            <div class="g-img"><img src="/assets/img/p1.png" loading="lazy" alt="Product photography" onerror="this.style.display='none'"></div>
+            <div class="g-img"><img src="/assets/img/p1.png" width="1600" height="1000" loading="lazy" alt="Product photography" onerror="this.style.display='none'"></div>
           </div>
           <div class="g-item landscape" data-cat="product">
-            <div class="g-img"><img src="/assets/img/p2.png" loading="lazy" alt="Product photography" onerror="this.style.display='none'"></div>
+            <div class="g-img"><img src="/assets/img/p2.png" width="1600" height="1000" loading="lazy" alt="Product photography" onerror="this.style.display='none'"></div>
           </div>
           <div class="g-item landscape" data-cat="product">
-            <div class="g-img"><img src="/assets/img/p3.png" loading="lazy" alt="Product photography" onerror="this.style.display='none'"></div>
+            <div class="g-img"><img src="/assets/img/p3.png" width="1600" height="1000" loading="lazy" alt="Product photography" onerror="this.style.display='none'"></div>
           </div>
           <div class="g-item landscape" data-cat="product">
-            <div class="g-img"><img src="/assets/img/p4.png" loading="lazy" alt="Product photography" onerror="this.style.display='none'"></div>
+            <div class="g-img"><img src="/assets/img/p4.png" width="1600" height="1000" loading="lazy" alt="Product photography" onerror="this.style.display='none'"></div>
           </div>
 
           <div class="g-item landscape" data-cat="documentation">
-            <div class="g-img"><img src="/assets/img/p9.png" loading="lazy" alt="Event documentation — Bali" onerror="this.style.display='none'"></div>
+            <div class="g-img"><img src="/assets/img/p9.png" width="1600" height="1000" loading="lazy" alt="Event documentation — Bali" onerror="this.style.display='none'"></div>
           </div>
           <div class="g-item landscape" data-cat="documentation">
-            <div class="g-img"><img src="/assets/img/p10.png" loading="lazy" alt="Event documentation — Bali" onerror="this.style.display='none'"></div>
+            <div class="g-img"><img src="/assets/img/p10.png" width="1600" height="1000" loading="lazy" alt="Event documentation — Bali" onerror="this.style.display='none'"></div>
           </div>
           <div class="g-item landscape" data-cat="documentation">
-            <div class="g-img"><img src="/assets/img/p11.png" loading="lazy" alt="Event documentation — Bali" onerror="this.style.display='none'"></div>
+            <div class="g-img"><img src="/assets/img/p11.png" width="1600" height="1000" loading="lazy" alt="Event documentation — Bali" onerror="this.style.display='none'"></div>
           </div>
 
           <div class="g-item landscape" data-cat="villa">
-            <div class="g-img"><img src="/assets/img/p12.png" loading="lazy" alt="Villa property photography — Bali" onerror="this.style.display='none'"></div>
+            <div class="g-img"><img src="/assets/img/p12.png" width="1600" height="1000" loading="lazy" alt="Villa property photography — Bali" onerror="this.style.display='none'"></div>
           </div>
           <div class="g-item landscape" data-cat="villa">
-            <div class="g-img"><img src="/assets/img/p13.png" loading="lazy" alt="Villa property photography — Bali" onerror="this.style.display='none'"></div>
+            <div class="g-img"><img src="/assets/img/p13.png" width="1600" height="1000" loading="lazy" alt="Villa property photography — Bali" onerror="this.style.display='none'"></div>
           </div>
           <div class="g-item landscape" data-cat="villa">
-            <div class="g-img"><img src="/assets/img/p14.png" loading="lazy" alt="Villa property photography — Bali" onerror="this.style.display='none'"></div>
+            <div class="g-img"><img src="/assets/img/p14.png" width="1600" height="1000" loading="lazy" alt="Villa property photography — Bali" onerror="this.style.display='none'"></div>
           </div>
         </div>
 
-        <p class="small" style="margin-top:12px;">&mdash; and many others.</p>
+        <p class="small" style="margin-top:12px;">Click any image to view full size. &mdash; and many others.</p>
       </div>
 
       <!-- Videography -->
@@ -365,7 +467,7 @@
 
         <div class="video-grid" data-gallery>
 
-          <!-- Showreel (full width) -->
+          <!-- Showreel (full width, autoplay via lazy-load) -->
           <div class="v-item" data-cat="showreel">
             <div class="embed-center">
               <div class="embed ratio-16x9">
@@ -378,273 +480,256 @@
 
           <div class="v-item" data-cat="wedding">
             <div class="embed-center">
-              <div class="embed ratio-16x9">
-                <iframe data-src="https://www.youtube.com/embed/0YCxzKBkfFs" title="Wedding video"
-                        allow="autoplay" allowfullscreen loading="lazy"></iframe>
-              </div>
+              <div class="embed ratio-16x9" data-yt="0YCxzKBkfFs" data-yt-title="Wedding video"></div>
             </div>
             <p class="small caption">Wedding</p>
           </div>
 
           <div class="v-item" data-cat="musicvideo">
             <div class="embed-center">
-              <div class="embed ratio-16x9">
-                <iframe data-src="https://www.youtube.com/embed/T2kWxd69kg0" title="Music video"
-                        allow="autoplay" allowfullscreen loading="lazy"></iframe>
-              </div>
+              <div class="embed ratio-16x9" data-yt="T2kWxd69kg0" data-yt-title="Music video"></div>
             </div>
             <p class="small caption">Music Video</p>
           </div>
 
           <div class="v-item" data-cat="musicvideo">
             <div class="embed-center">
-              <div class="embed ratio-16x9">
-                <iframe data-src="https://www.youtube.com/embed/2JOtIHDefgY" title="Music video"
-                        allow="autoplay" allowfullscreen loading="lazy"></iframe>
-              </div>
+              <div class="embed ratio-16x9" data-yt="2JOtIHDefgY" data-yt-title="Music video"></div>
             </div>
             <p class="small caption">Music Video</p>
           </div>
 
           <div class="v-item" data-cat="wedding">
             <div class="embed-center">
-              <div class="embed ratio-16x9">
-                <iframe data-src="https://www.youtube.com/embed/CpAIBL6LX8c" title="Wedding video"
-                        allow="autoplay" allowfullscreen loading="lazy"></iframe>
-              </div>
+              <div class="embed ratio-16x9" data-yt="CpAIBL6LX8c" data-yt-title="Wedding video"></div>
             </div>
             <p class="small caption">Wedding</p>
           </div>
 
           <div class="v-item" data-cat="brand">
             <div class="embed-center">
-              <div class="embed ratio-16x9">
-                <iframe data-src="https://www.youtube.com/embed/wvuLzFSNERs" title="Brand video"
-                        allow="autoplay" allowfullscreen loading="lazy"></iframe>
-              </div>
+              <div class="embed ratio-16x9" data-yt="wvuLzFSNERs" data-yt-title="Brand video"></div>
             </div>
             <p class="small caption">Brand</p>
           </div>
 
           <div class="v-item" data-cat="brand">
             <div class="embed-center">
-              <div class="embed ratio-16x9">
-                <iframe data-src="https://www.youtube.com/embed/K0O8GM8-FfU" title="Brand video"
-                        allow="autoplay" allowfullscreen loading="lazy"></iframe>
-              </div>
+              <div class="embed ratio-16x9" data-yt="K0O8GM8-FfU" data-yt-title="Brand video"></div>
             </div>
             <p class="small caption">Brand</p>
           </div>
 
           <div class="v-item" data-cat="documenter">
             <div class="embed-center">
-              <div class="embed ratio-16x9">
-                <iframe data-src="https://www.youtube.com/embed/NYUpYE8PHU8" title="Documentary video"
-                        allow="autoplay" allowfullscreen loading="lazy"></iframe>
-              </div>
+              <div class="embed ratio-16x9" data-yt="NYUpYE8PHU8" data-yt-title="Documentary video"></div>
             </div>
             <p class="small caption">Documentary</p>
           </div>
 
           <div class="v-item" data-cat="wedding">
             <div class="embed-center">
-              <div class="embed ratio-16x9">
-                <iframe data-src="https://www.youtube.com/embed/eKnHoWZYrPI" title="Wedding video"
-                        allow="autoplay" allowfullscreen loading="lazy"></iframe>
-              </div>
+              <div class="embed ratio-16x9" data-yt="eKnHoWZYrPI" data-yt-title="Wedding video"></div>
             </div>
             <p class="small caption">Wedding</p>
           </div>
 
           <div class="v-item" data-cat="documenter">
             <div class="embed-center">
-              <div class="embed ratio-16x9">
-                <iframe data-src="https://www.youtube.com/embed/J8y2FHkcITE" title="Documentary video"
-                        allow="autoplay" allowfullscreen loading="lazy"></iframe>
-              </div>
+              <div class="embed ratio-16x9" data-yt="J8y2FHkcITE" data-yt-title="Documentary video"></div>
             </div>
             <p class="small caption">Documentary</p>
           </div>
 
           <div class="v-item" data-cat="documenter">
             <div class="embed-center">
-              <div class="embed ratio-16x9">
-                <iframe data-src="https://www.youtube.com/embed/BprmkmCrm9o" title="Documentary video"
-                        allow="autoplay" allowfullscreen loading="lazy"></iframe>
-              </div>
+              <div class="embed ratio-16x9" data-yt="BprmkmCrm9o" data-yt-title="Documentary video"></div>
             </div>
             <p class="small caption">Documentary</p>
           </div>
 
           <div class="v-item" data-cat="brand">
             <div class="embed-center">
-              <div class="embed ratio-16x9">
-                <iframe data-src="https://www.youtube.com/embed/FRKt_5Ej0MA" title="Brand video"
-                        allow="autoplay" allowfullscreen loading="lazy"></iframe>
-              </div>
+              <div class="embed ratio-16x9" data-yt="FRKt_5Ej0MA" data-yt-title="Brand video"></div>
             </div>
             <p class="small caption">Brand</p>
           </div>
 
           <div class="v-item" data-cat="documenter">
             <div class="embed-center">
-              <div class="embed ratio-16x9">
-                <iframe data-src="https://www.youtube.com/embed/vYOR-3e3yN0" title="Documentary video"
-                        allow="autoplay" allowfullscreen loading="lazy"></iframe>
-              </div>
+              <div class="embed ratio-16x9" data-yt="vYOR-3e3yN0" data-yt-title="Documentary video"></div>
             </div>
             <p class="small caption">Documentary</p>
           </div>
 
           <!-- Short-form / Reels -->
           <div class="v-item" data-cat="shortform">
-            <div class="embed-center"><div class="embed ratio-9x16">
-              <iframe data-src="https://www.youtube.com/embed/XYft1faSAig" title="Short-form reel 01" allow="autoplay" allowfullscreen loading="lazy"></iframe>
-            </div></div>
+            <div class="embed-center"><div class="embed ratio-9x16" data-yt="XYft1faSAig" data-yt-title="Short-form reel 01"></div></div>
             <p class="small caption">Reel 01</p>
           </div>
           <div class="v-item" data-cat="shortform">
-            <div class="embed-center"><div class="embed ratio-9x16">
-              <iframe data-src="https://www.youtube.com/embed/_5EIk67tZC8" title="Short-form reel 02" allow="autoplay" allowfullscreen loading="lazy"></iframe>
-            </div></div>
+            <div class="embed-center"><div class="embed ratio-9x16" data-yt="_5EIk67tZC8" data-yt-title="Short-form reel 02"></div></div>
             <p class="small caption">Reel 02</p>
           </div>
           <div class="v-item" data-cat="shortform">
-            <div class="embed-center"><div class="embed ratio-9x16">
-              <iframe data-src="https://www.youtube.com/embed/q0HEGoOImjE" title="Short-form reel 03" allow="autoplay" allowfullscreen loading="lazy"></iframe>
-            </div></div>
+            <div class="embed-center"><div class="embed ratio-9x16" data-yt="q0HEGoOImjE" data-yt-title="Short-form reel 03"></div></div>
             <p class="small caption">Reel 03</p>
           </div>
           <div class="v-item" data-cat="shortform">
-            <div class="embed-center"><div class="embed ratio-9x16">
-              <iframe data-src="https://www.youtube.com/embed/N0mPf3q_QC4" title="Short-form reel 04" allow="autoplay" allowfullscreen loading="lazy"></iframe>
-            </div></div>
+            <div class="embed-center"><div class="embed ratio-9x16" data-yt="N0mPf3q_QC4" data-yt-title="Short-form reel 04"></div></div>
             <p class="small caption">Reel 04</p>
           </div>
           <div class="v-item" data-cat="shortform">
-            <div class="embed-center"><div class="embed ratio-9x16">
-              <iframe data-src="https://www.youtube.com/embed/cG6MI3WdizM" title="Short-form reel 05" allow="autoplay" allowfullscreen loading="lazy"></iframe>
-            </div></div>
+            <div class="embed-center"><div class="embed ratio-9x16" data-yt="cG6MI3WdizM" data-yt-title="Short-form reel 05"></div></div>
             <p class="small caption">Reel 05</p>
           </div>
           <div class="v-item" data-cat="shortform">
-            <div class="embed-center"><div class="embed ratio-9x16">
-              <iframe data-src="https://www.youtube.com/embed/suDH29oBnLM" title="Short-form reel 06" allow="autoplay" allowfullscreen loading="lazy"></iframe>
-            </div></div>
+            <div class="embed-center"><div class="embed ratio-9x16" data-yt="suDH29oBnLM" data-yt-title="Short-form reel 06"></div></div>
             <p class="small caption">Reel 06</p>
           </div>
           <div class="v-item" data-cat="shortform">
-            <div class="embed-center"><div class="embed ratio-9x16">
-              <iframe data-src="https://www.youtube.com/embed/b3kLKRamH-Y" title="Short-form reel 07" allow="autoplay" allowfullscreen loading="lazy"></iframe>
-            </div></div>
+            <div class="embed-center"><div class="embed ratio-9x16" data-yt="b3kLKRamH-Y" data-yt-title="Short-form reel 07"></div></div>
             <p class="small caption">Reel 07</p>
           </div>
           <div class="v-item" data-cat="shortform">
-            <div class="embed-center"><div class="embed ratio-9x16">
-              <iframe data-src="https://www.youtube.com/embed/V1dVE4_htrE" title="Short-form reel 08" allow="autoplay" allowfullscreen loading="lazy"></iframe>
-            </div></div>
+            <div class="embed-center"><div class="embed ratio-9x16" data-yt="V1dVE4_htrE" data-yt-title="Short-form reel 08"></div></div>
             <p class="small caption">Reel 08</p>
           </div>
           <div class="v-item" data-cat="shortform">
-            <div class="embed-center"><div class="embed ratio-9x16">
-              <iframe data-src="https://www.youtube.com/embed/afYP5ZVcUNY" title="Short-form reel 09" allow="autoplay" allowfullscreen loading="lazy"></iframe>
-            </div></div>
+            <div class="embed-center"><div class="embed ratio-9x16" data-yt="afYP5ZVcUNY" data-yt-title="Short-form reel 09"></div></div>
             <p class="small caption">Reel 09</p>
           </div>
           <div class="v-item" data-cat="shortform">
-            <div class="embed-center"><div class="embed ratio-9x16">
-              <iframe data-src="https://www.youtube.com/embed/8GfjclsOjKw" title="Short-form reel 10" allow="autoplay" allowfullscreen loading="lazy"></iframe>
-            </div></div>
+            <div class="embed-center"><div class="embed ratio-9x16" data-yt="8GfjclsOjKw" data-yt-title="Short-form reel 10"></div></div>
             <p class="small caption">Reel 10</p>
           </div>
           <div class="v-item" data-cat="shortform">
-            <div class="embed-center"><div class="embed ratio-9x16">
-              <iframe data-src="https://www.youtube.com/embed/uugpEs9NbOo" title="Short-form reel 11" allow="autoplay" allowfullscreen loading="lazy"></iframe>
-            </div></div>
+            <div class="embed-center"><div class="embed ratio-9x16" data-yt="uugpEs9NbOo" data-yt-title="Short-form reel 11"></div></div>
             <p class="small caption">Reel 11</p>
           </div>
           <div class="v-item" data-cat="shortform">
-            <div class="embed-center"><div class="embed ratio-9x16">
-              <iframe data-src="https://www.youtube.com/embed/YCMlYEWLn0Y" title="Short-form reel 12" allow="autoplay" allowfullscreen loading="lazy"></iframe>
-            </div></div>
+            <div class="embed-center"><div class="embed ratio-9x16" data-yt="YCMlYEWLn0Y" data-yt-title="Short-form reel 12"></div></div>
             <p class="small caption">Reel 12</p>
           </div>
           <div class="v-item" data-cat="shortform">
-            <div class="embed-center"><div class="embed ratio-9x16">
-              <iframe data-src="https://www.youtube.com/embed/Hk2YVBKgo2A" title="Short-form reel 13" allow="autoplay" allowfullscreen loading="lazy"></iframe>
-            </div></div>
+            <div class="embed-center"><div class="embed ratio-9x16" data-yt="Hk2YVBKgo2A" data-yt-title="Short-form reel 13"></div></div>
             <p class="small caption">Reel 13</p>
           </div>
           <div class="v-item" data-cat="shortform">
-            <div class="embed-center"><div class="embed ratio-9x16">
-              <iframe data-src="https://www.youtube.com/embed/GyzpKst6ai0" title="Short-form reel 14" allow="autoplay" allowfullscreen loading="lazy"></iframe>
-            </div></div>
+            <div class="embed-center"><div class="embed ratio-9x16" data-yt="GyzpKst6ai0" data-yt-title="Short-form reel 14"></div></div>
             <p class="small caption">Reel 14</p>
           </div>
           <div class="v-item" data-cat="shortform">
-            <div class="embed-center"><div class="embed ratio-9x16">
-              <iframe data-src="https://www.youtube.com/embed/pbbf7Rb5tKA" title="Short-form reel 15" allow="autoplay" allowfullscreen loading="lazy"></iframe>
-            </div></div>
+            <div class="embed-center"><div class="embed ratio-9x16" data-yt="pbbf7Rb5tKA" data-yt-title="Short-form reel 15"></div></div>
             <p class="small caption">Reel 15</p>
           </div>
           <div class="v-item" data-cat="shortform">
-            <div class="embed-center"><div class="embed ratio-9x16">
-              <iframe data-src="https://www.youtube.com/embed/cHeQQGWtayY" title="Short-form reel 16" allow="autoplay" allowfullscreen loading="lazy"></iframe>
-            </div></div>
+            <div class="embed-center"><div class="embed ratio-9x16" data-yt="cHeQQGWtayY" data-yt-title="Short-form reel 16"></div></div>
             <p class="small caption">Reel 16</p>
           </div>
           <div class="v-item" data-cat="shortform">
-            <div class="embed-center"><div class="embed ratio-9x16">
-              <iframe data-src="https://www.youtube.com/embed/9pX1xU9WWZ4" title="Short-form reel 17" allow="autoplay" allowfullscreen loading="lazy"></iframe>
-            </div></div>
+            <div class="embed-center"><div class="embed ratio-9x16" data-yt="9pX1xU9WWZ4" data-yt-title="Short-form reel 17"></div></div>
             <p class="small caption">Reel 17</p>
           </div>
           <div class="v-item" data-cat="shortform">
-            <div class="embed-center"><div class="embed ratio-9x16">
-              <iframe data-src="https://www.youtube.com/embed/_H1AABfM7vY" title="Short-form reel 18" allow="autoplay" allowfullscreen loading="lazy"></iframe>
-            </div></div>
+            <div class="embed-center"><div class="embed ratio-9x16" data-yt="_H1AABfM7vY" data-yt-title="Short-form reel 18"></div></div>
             <p class="small caption">Reel 18</p>
           </div>
           <div class="v-item" data-cat="shortform">
-            <div class="embed-center"><div class="embed ratio-9x16">
-              <iframe data-src="https://www.youtube.com/embed/mw8NRcAen-s" title="Short-form reel 19" allow="autoplay" allowfullscreen loading="lazy"></iframe>
-            </div></div>
+            <div class="embed-center"><div class="embed ratio-9x16" data-yt="mw8NRcAen-s" data-yt-title="Short-form reel 19"></div></div>
             <p class="small caption">Reel 19</p>
           </div>
           <div class="v-item" data-cat="shortform">
-            <div class="embed-center"><div class="embed ratio-9x16">
-              <iframe data-src="https://www.youtube.com/embed/3xOevQzZ6jY" title="Short-form reel 20" allow="autoplay" allowfullscreen loading="lazy"></iframe>
-            </div></div>
+            <div class="embed-center"><div class="embed ratio-9x16" data-yt="3xOevQzZ6jY" data-yt-title="Short-form reel 20"></div></div>
             <p class="small caption">Reel 20</p>
           </div>
           <div class="v-item" data-cat="shortform">
-            <div class="embed-center"><div class="embed ratio-9x16">
-              <iframe data-src="https://www.youtube.com/embed/cUyBmw5EuyU" title="Short-form reel 21" allow="autoplay" allowfullscreen loading="lazy"></iframe>
-            </div></div>
+            <div class="embed-center"><div class="embed ratio-9x16" data-yt="cUyBmw5EuyU" data-yt-title="Short-form reel 21"></div></div>
             <p class="small caption">Reel 21</p>
           </div>
           <div class="v-item" data-cat="villa">
-            <div class="embed-center"><div class="embed ratio-9x16">
-              <iframe data-src="https://www.youtube.com/embed/dLVTqzOYvIc" title="Villa reel" allow="autoplay" allowfullscreen loading="lazy"></iframe>
-            </div></div>
+            <div class="embed-center"><div class="embed ratio-9x16" data-yt="dLVTqzOYvIc" data-yt-title="Villa reel"></div></div>
             <p class="small caption">Villa Reel</p>
           </div>
           <div class="v-item" data-cat="shortform">
-            <div class="embed-center"><div class="embed ratio-9x16">
-              <iframe data-src="https://www.youtube.com/embed/mVC9JF5N2uQ" title="Short-form reel 23" allow="autoplay" allowfullscreen loading="lazy"></iframe>
-            </div></div>
+            <div class="embed-center"><div class="embed ratio-9x16" data-yt="mVC9JF5N2uQ" data-yt-title="Short-form reel 23"></div></div>
             <p class="small caption">Reel 23</p>
           </div>
 
         </div>
 
-        <p class="small" style="margin-top:12px;">&mdash; and many others.</p>
+        <p class="small" style="margin-top:12px;">Click any thumbnail to play. &mdash; and many others.</p>
       </div>
     </section>
 
 
+    <!-- PRICING -->
+    <section id="pricing" class="section" data-reveal>
+      <div class="section-title">
+        <div>
+          <h2>Packages</h2>
+          <p>Transparent tiers. Custom briefs welcome.</p>
+        </div>
+      </div>
+
+      <div class="pricing-grid">
+        <article class="price-card">
+          <div class="price-name">Essential</div>
+          <div class="price-amount">Request quote <small>· short sessions</small></div>
+          <ul class="price-list">
+            <li>Up to 2 hours on location</li>
+            <li>1 photographer or videographer</li>
+            <li>30+ edited photos <em>or</em> one short reel</li>
+            <li>Private online gallery</li>
+            <li>Delivery in 7–10 days</li>
+          </ul>
+          <div class="price-cta">
+            <a class="btn" href="#contact">Get a quote</a>
+          </div>
+        </article>
+
+        <article class="price-card is-featured">
+          <span class="price-badge">Most popular</span>
+          <div class="price-name">Standard</div>
+          <div class="price-amount">Request quote <small>· half-day coverage</small></div>
+          <ul class="price-list">
+            <li>Up to 5 hours on location</li>
+            <li>Photo + video crew</li>
+            <li>80+ edited photos &amp; 1–2 min highlight film</li>
+            <li>Drone footage included</li>
+            <li>Color grading &amp; sound design</li>
+            <li>Delivery in 2–3 weeks</li>
+          </ul>
+          <div class="price-cta">
+            <a class="btn primary" href="#contact">Get a quote</a>
+          </div>
+        </article>
+
+        <article class="price-card">
+          <div class="price-name">Premium</div>
+          <div class="price-amount">Request quote <small>· full production</small></div>
+          <ul class="price-list">
+            <li>Full-day or multi-day shoots</li>
+            <li>Lead team + assistants</li>
+            <li>Cinematic film up to 5 min</li>
+            <li>Unlimited edited photos</li>
+            <li>Drone, gimbal &amp; lighting</li>
+            <li>Two rounds of revisions</li>
+          </ul>
+          <div class="price-cta">
+            <a class="btn" href="#contact">Get a quote</a>
+          </div>
+        </article>
+      </div>
+
+      <p class="small" style="margin-top:14px; text-align:center;">
+        Packages are starting points — every brief is quoted to fit the scope.
+      </p>
+    </section>
+
+
     <!-- TESTIMONIALS -->
-    <section class="section">
+    <section class="section" data-reveal>
       <div class="section-title">
         <div>
           <h2>Testimonials</h2>
@@ -666,8 +751,63 @@
     </section>
 
 
+    <!-- FAQ -->
+    <section id="faq" class="section" data-reveal>
+      <div class="section-title">
+        <div>
+          <h2>FAQ</h2>
+          <p>Quick answers before you reach out.</p>
+        </div>
+      </div>
+
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>Do you travel outside Bali for shoots?</summary>
+          <div class="faq-body">
+            <p>Yes — we cover all of Bali and regularly travel to Lombok, Nusa Penida, the Gili Islands, Java, and beyond. Travel costs are billed at cost.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>How long until we receive the final photos and videos?</summary>
+          <div class="faq-body">
+            <p>Photos: typically 7–14 days. Short-form reels: 3–7 days. Wedding films and brand films: 3–6 weeks depending on scope. Rush delivery is available on request.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Do you provide RAW files?</summary>
+          <div class="faq-body">
+            <p>We deliver fully edited, color-graded files as standard. RAW or unedited files can be provided on request and are quoted separately.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>What is your booking process?</summary>
+          <div class="faq-body">
+            <p>Send us a brief with the project type, location, date, duration, and references. We reply within 24 hours with a quote. To lock the date we ask for a 30% deposit, with the remainder due on delivery.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Do you offer drone footage?</summary>
+          <div class="faq-body">
+            <p>Yes. Drone coverage is included in most video packages and can be added to any photo session, subject to local flight regulations.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>What payment methods do you accept?</summary>
+          <div class="faq-body">
+            <p>Bank transfer (IDR), Wise, and PayPal are all accepted. Invoices are provided for every project.</p>
+          </div>
+        </details>
+      </div>
+    </section>
+
+
     <!-- CONTACT -->
-    <section id="contact" class="section">
+    <section id="contact" class="section" data-reveal>
       <div class="section-title">
         <div>
           <h2>Let's work together</h2>
@@ -675,24 +815,78 @@
         </div>
       </div>
 
-      <div class="card contact-card">
-        <p class="muted contact-intro">
-          Send a brief with your <strong>project type</strong>, <strong>location</strong>,
-          <strong>date</strong>, <strong>duration</strong>, and any <strong>references</strong>
-          &mdash; we'll reply with availability and a quote.
-        </p>
+      <div class="contact-grid">
+        <div class="card">
+          <p class="muted" style="margin-top:0;">
+            Tell us about your project — we'll reply with availability and a quote.
+          </p>
 
-        <div class="cta contact-cta">
-          <a class="btn primary" href="https://wa.me/6282298080728?text=Halo%20Mononata%2C%20saya%20tertarik%20untuk%20booking." target="_blank" rel="noopener">
-            <span aria-hidden="true">💬</span> WhatsApp
-          </a>
-          <a class="btn" href="mailto:mononatateam@gmail.com?subject=Project%20Inquiry">
-            <span aria-hidden="true">✉️</span> Email
-          </a>
-          <a class="btn" href="https://instagram.com/mononataworks" target="_blank" rel="noopener">
-            <span aria-hidden="true">📷</span> Instagram
-          </a>
+          <form class="contact-form" data-contact-form novalidate>
+            <div class="form-row">
+              <div class="field">
+                <label for="cf-name">Name</label>
+                <input id="cf-name" name="name" type="text" autocomplete="name" required>
+              </div>
+              <div class="field">
+                <label for="cf-email">Email</label>
+                <input id="cf-email" name="email" type="email" autocomplete="email" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="field">
+                <label for="cf-type">Project type</label>
+                <select id="cf-type" name="type">
+                  <option value="">Select…</option>
+                  <option>Wedding</option>
+                  <option>Brand / Commercial</option>
+                  <option>Event documentation</option>
+                  <option>Villa / Property</option>
+                  <option>Portrait</option>
+                  <option>Product</option>
+                  <option>Short-form / Reels</option>
+                  <option>Music video</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="cf-date">Approx. date</label>
+                <input id="cf-date" name="date" type="date">
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="cf-location">Location</label>
+              <input id="cf-location" name="location" type="text" placeholder="e.g. Canggu, Bali">
+            </div>
+
+            <div class="field">
+              <label for="cf-message">Tell us about your project</label>
+              <textarea id="cf-message" name="message" placeholder="Project details, duration, references…" required></textarea>
+            </div>
+
+            <div class="form-actions">
+              <button class="btn primary" type="submit">Send message</button>
+              <span class="form-status" data-form-status role="status" aria-live="polite"></span>
+            </div>
+          </form>
         </div>
+
+        <aside class="contact-side">
+          <h3>Prefer to chat?</h3>
+          <p class="muted" style="margin:0;">Reach us directly — we usually reply within a few hours.</p>
+          <div class="quick">
+            <a href="https://wa.me/6282298080728?text=Halo%20Mononata%2C%20saya%20tertarik%20untuk%20booking." target="_blank" rel="noopener">
+              <span aria-hidden="true">💬</span> WhatsApp
+            </a>
+            <a href="mailto:mononatateam@gmail.com?subject=Project%20Inquiry">
+              <span aria-hidden="true">✉️</span> mononatateam@gmail.com
+            </a>
+            <a href="https://instagram.com/mononataworks" target="_blank" rel="noopener">
+              <span aria-hidden="true">📷</span> @mononataworks
+            </a>
+          </div>
+        </aside>
       </div>
     </section>
 
@@ -706,6 +900,10 @@
           <span aria-hidden="true">·</span>
           <a href="#projects">Work</a>
           <span aria-hidden="true">·</span>
+          <a href="#pricing">Pricing</a>
+          <span aria-hidden="true">·</span>
+          <a href="#faq">FAQ</a>
+          <span aria-hidden="true">·</span>
           <a href="#contact">Contact</a>
         </span>
       </div>
@@ -713,8 +911,27 @@
 
   </main>
 
-  <!-- Scripts at end of body, deferred isn't needed here -->
-  <script src="/assets/js/main.js?v=11"></script>
+  <!-- Lightbox -->
+  <div class="lightbox" data-lightbox aria-hidden="true" role="dialog" aria-label="Photo viewer">
+    <div class="lb-backdrop"></div>
+    <div class="lb-frame">
+      <button class="lb-btn lb-close" type="button" data-lb-close aria-label="Close">✕</button>
+      <button class="lb-btn lb-prev" type="button" data-lb-prev aria-label="Previous photo">‹</button>
+      <button class="lb-btn lb-next" type="button" data-lb-next aria-label="Next photo">›</button>
+      <div class="lb-img-wrap">
+        <img data-lb-img alt="">
+      </div>
+      <div class="lb-meta">
+        <span data-lb-caption></span>
+        <span class="lb-counter" data-lb-counter></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Back to top -->
+  <button class="to-top" type="button" data-to-top aria-label="Back to top">↑</button>
+
+  <script src="/assets/js/main.js?v=12"></script>
   <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>

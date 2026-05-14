@@ -1,0 +1,17 @@
+{
+  "name": "Mononata — Photo & Video, Bali",
+  "short_name": "Mononata",
+  "description": "Bali-based photo & video studio.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0b0d12",
+  "theme_color": "#0b0d12",
+  "icons": [
+    {
+      "src": "/assets/img/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
