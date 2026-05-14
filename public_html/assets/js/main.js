@@ -114,7 +114,7 @@
           io.unobserve(f);
         });
       },
-      { rootMargin: '300px 0px' } // start loading 300px before entering viewport
+      { rootMargin: '120px 0px' } // load shortly before visible; smaller margin = fewer early embeds
     );
 
     iframes.forEach((f) => io.observe(f));

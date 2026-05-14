@@ -18,6 +18,9 @@
   <meta property="og:title" content="Mononata — Photographer & Videographer in Bali">
   <meta property="og:description" content="Photo & video production for brands, weddings, events, and villas. Based in Bali, Indonesia.">
   <meta property="og:image" content="https://mononata.com/assets/img/og-cover.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Mononata — photo and video studio in Bali">
   <meta property="og:locale" content="en_US">
   <meta property="og:site_name" content="Mononata">
 
@@ -47,7 +50,10 @@
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "name": "Mononata",
-    "image": "https://mononata.com/assets/img/logo.png",
+    "image": [
+      "https://mononata.com/assets/img/og-cover.jpg",
+      "https://mononata.com/assets/img/logo.png"
+    ],
     "url": "https://mononata.com",
     "telephone": "+62-822-9808-0728",
     "email": "mononatateam@gmail.com",
@@ -238,10 +244,10 @@
 
 
     <!-- TRUSTED BY -->
-    <section class="section">
+    <section id="clients" class="section" aria-labelledby="clients-heading">
       <div class="section-title">
         <div>
-          <h2>Trusted by</h2>
+          <h2 id="clients-heading">Trusted by</h2>
           <p>Brands we've worked with.</p>
         </div>
       </div>
@@ -696,6 +702,8 @@
         <span class="footer-links">
           <a href="#home">Home</a>
           <span aria-hidden="true">·</span>
+          <a href="#clients">Clients</a>
+          <span aria-hidden="true">·</span>
           <a href="#projects">Work</a>
           <span aria-hidden="true">·</span>
           <a href="#contact">Contact</a>
@@ -706,7 +714,7 @@
   </main>
 
   <!-- Scripts at end of body, deferred isn't needed here -->
-  <script src="/assets/js/main.js?v=10"></script>
+  <script src="/assets/js/main.js?v=11"></script>
   <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>
