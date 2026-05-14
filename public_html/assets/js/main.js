@@ -12,16 +12,27 @@
     const mobile = document.querySelector('[data-mobile]');
     if (!btn || !mobile) return;
 
+    const setOpen = (open) => {
+      mobile.classList.toggle('open', open);
+      btn.setAttribute('aria-expanded', String(open));
+      document.body.style.overflow = open ? 'hidden' : '';
+    };
+
     btn.addEventListener('click', () => {
-      const isOpen = mobile.classList.toggle('open');
-      btn.setAttribute('aria-expanded', String(isOpen));
+      setOpen(!mobile.classList.contains('open'));
     });
 
     // Close menu after clicking any link inside
     mobile.addEventListener('click', (e) => {
       if (e.target.closest('a')) {
-        mobile.classList.remove('open');
-        btn.setAttribute('aria-expanded', 'false');
+        setOpen(false);
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && mobile.classList.contains('open')) {
+        setOpen(false);
+        btn.focus();
       }
     });
   }
@@ -41,7 +52,7 @@
         buttons.forEach((b) => {
           const on = b === activeBtn;
           b.classList.toggle('is-active', on);
-          b.setAttribute('aria-pressed', String(on));
+          b.setAttribute('aria-pressed', on ? 'true' : 'false');
         });
       };
 
@@ -61,12 +72,16 @@
       };
 
       buttons.forEach((btn) => {
+        btn.setAttribute('aria-pressed', btn.classList.contains('is-active') ? 'true' : 'false');
         btn.addEventListener('click', () => {
           const cat = btn.dataset.filter || 'all';
           setActive(btn);
           applyFilter(cat);
         });
       });
+
+      const defaultBtn = bar.querySelector('.cat.is-active') || buttons[0];
+      if (defaultBtn) setActive(defaultBtn);
 
       // Init: show all
       applyFilter('all');
@@ -124,10 +139,6 @@
       btn.disabled = true;
     });
   }
-
-  /* ----- 5. Smooth-scroll offset for sticky nav (progressive) ------------ */
-  // (Browser's native `scroll-behavior: smooth` already handles this;
-  //  nothing extra needed here.)
 
   /* ----- Init on DOM ready ----------------------------------------------- */
   function init() {
